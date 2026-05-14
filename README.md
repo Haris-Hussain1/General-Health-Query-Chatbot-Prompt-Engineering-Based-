@@ -1,6 +1,6 @@
 # Health Chatbot
 
-A production-ready web-based health assistant chatbot built with Flask and Google Gemini API. The chatbot provides general health information while maintaining strict safety protocols to prevent harmful medical advice.
+A production ready web based health assistant chatbot built with Flask and Google Gemini API. The chatbot provides general health information while maintaining strict safety protocols to prevent harmful medical advice.
 
 ## Project Overview
 
