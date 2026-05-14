@@ -37,7 +37,7 @@ The Health Chatbot is an intelligent conversational AI system designed to assist
 
 ### Project Structure
 ```
-task 4 DHc-1898/
+General health chatbot/
 ├── app/                          # Chatbot logic modules
 │   ├── __init__.py
 │   ├── chatbot.py               # Main chatbot class with Gemini integration
@@ -109,7 +109,7 @@ User Input → Safety Filter (Input Validation)
 
 1. **Clone or download the project**
    ```bash
-   cd "task 4 DHc-1898"
+   cd "General health chatbot"
    ```
 
 2. **Install dependencies**
