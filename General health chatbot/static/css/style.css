@@ -1,0 +1,307 @@
+/**
+ * Stylesheet for the Health Chatbot application.
+ * 
+ * This stylesheet provides a modern, responsive design with clean aesthetics
+ * and smooth animations for an optimal user experience.
+ */
+
+/* ==================== Reset & Base Styles ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2c5282 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ==================== Main Container ==================== */
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* ==================== Header Styles ==================== */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* ==================== Chat Container ==================== */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #0d1117;
+}
+
+/* ==================== Message Styles ==================== */
+.message {
+    margin-bottom: 20px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* User Messages */
+.user-message {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user-message .message-content {
+    background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+    color: #ffffff;
+    padding: 18px 24px;
+    border-radius: 20px 20px 5px 20px;
+    max-width: 75%;
+    word-wrap: break-word;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Bot Messages */
+.bot-message {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.bot-message .message-content {
+    background: #313244;
+    color: #c0caf5;
+    padding: 15px 20px;
+    border-radius: 20px 20px 20px 5px;
+    max-width: 70%;
+    word-wrap: break-word;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.bot-message .message-content strong {
+    color: #1976d2;
+    font-weight: 700;
+    display: block;
+    margin: 12px 0 8px 0;
+}
+
+.bot-message .message-content em {
+    color: #555;
+    font-style: italic;
+}
+
+.bot-message .message-content ul {
+    margin: 12px 0;
+    padding-left: 20px;
+}
+
+.bot-message .message-content li {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+/* ==================== Input Area Styles ==================== */
+.input-container {
+    padding: 20px;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+}
+
+#chat-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#user-input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+#user-input:focus {
+    outline: none;
+    border-color: #1976d2;
+}
+
+#send-button {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#send-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(25, 118, 210, 0.4);
+}
+
+#send-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.clear-button {
+    width: 100%;
+    padding: 10px;
+    background: #313244;
+    color: #a9b1d6;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.clear-button:hover {
+    background: #414868;
+}
+
+/* ==================== Warning Banner ==================== */
+.warning-banner {
+    padding: 15px 20px;
+    background: #1e3a8a;
+    border-left: 4px solid #1976d2;
+    color: #1976d2;
+    margin: 0 20px 20px 20px;
+    border-radius: 5px;
+    display: none;
+}
+
+.warning-banner.show {
+    display: block;
+    animation: slideIn 0.3s ease-in;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+/* ==================== Typing Indicator ==================== */
+.typing-indicator {
+    display: flex;
+    gap: 5px;
+    padding: 15px 20px;
+    background: #0d1117;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: fit-content;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background: #1976d2;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.typing-indicator span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+    0%, 80%, 100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+
+/* ==================== Footer Styles ==================== */
+.footer {
+    padding: 15px;
+    text-align: center;
+    background: #0d1117;
+    border-top: 1px solid #1e3a8a;
+    color: #999;
+    font-size: 0.85rem;
+    margin-top: auto;
+}
+
+/* ==================== Responsive Design ==================== */
+@media (max-width: 768px) {
+    .container {
+        border-radius: 0;
+        height: 100vh;
+    }
+    
+    header {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .chat-container {
+        height: calc(100vh - 120px);
+    }
+    
+    .user-message .message-content,
+    .bot-message .message-content {
+        max-width: 90%;
+    }
+}
